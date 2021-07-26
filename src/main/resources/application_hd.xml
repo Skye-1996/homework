@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:hd="http://skye.com/hd"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://skye.com/hd
+        http://skye.com/hd.xsd">
+
+    <hd:student beanName="100" id="1" name="小明"></hd:student>
+    <hd:class name="数学" id="1">
+        <hd:student bean="100"></hd:student>
+    </hd:class>
+    <hd:school name="小学" id="1">
+        <hd:student bean="1"></hd:student>
+        <hd:class bean="1"></hd:class>
+    </hd:school>
+</beans>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+        xmlns="http://skye.com/hd"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://skye.com/hd"
+        elementFormDefault="qualified">
+    <xsd:element name="student">
+        <xsd:complexType>
+            <xsd:attribute name="id" type="xsd:int"/>
+            <xsd:attribute name="name" type="xsd:string"/>
+            <xsd:attribute name="beanName" type="xsd:string"/>
+        </xsd:complexType>
+    </xsd:element>
+
+
+    <xsd:element name="class">
+        <xsd:complexType>
+            <xsd:sequence  minOccurs="0" maxOccurs="unbounded">
+                <xsd:element name="student">
+                    <xsd:complexType>
+                        <xsd:attribute name="bean" type="xsd:string"/>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+            <xsd:attribute name="id" type="xsd:int"/>
+            <xsd:attribute name="name" type="xsd:string"/>
+            <xsd:attribute name="beanName" type="xsd:string"/>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="school">
+        <xsd:complexType>
+            <xsd:sequence minOccurs="0" maxOccurs="2">
+                <xsd:element name="student">
+                    <xsd:complexType>
+                        <xsd:attribute name="bean" type="xsd:string"/>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="class">
+                    <xsd:complexType>
+                        <xsd:attribute name="bean" type="xsd:string"/>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+
+            <xsd:attribute name="id" type="xsd:int"/>
+            <xsd:attribute name="name" type="xsd:string"/>
+            <xsd:attribute name="beanName" type="xsd:string"/>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>
